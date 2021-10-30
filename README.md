@@ -11,13 +11,13 @@
 
 ## Tech Stack
 ---
-For the tech enthusiasts(and our evaluators), here is the tech stack that we used:
+For the tech enthusiasts _(and our evaluators)_, here is the tech stack that we used:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" height="20" width="20"/> HTML 5
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" height="25" width="25"/> HTML 5
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" height="20" width="20"/> CSS 3
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" height="25" width="25"/> CSS 3
 
-<img src="https://www.vhv.rs/dpng/d/478-4788452_vector-db-symbol-sql-azure-hd-png-download.png" height="20" width="20" /> SQL
+<img src="https://www.freeiconspng.com/thumbs/sql-server-icon-png/sql-server-icon-png-29.png" height="25" width="25"/> SQL
 
 ## Team
 ---
