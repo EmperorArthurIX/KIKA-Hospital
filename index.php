@@ -7,7 +7,7 @@
     $_SESSION['sql']=$sql;
     $_SESSION['name']=$name;
 
-    $con = mysqli_connect($server, $username,$password);
+    $con = mysqli_connect($server, $username, $password);
 
     if(!$con){
         die("Connection to this database failed due to".
@@ -30,7 +30,15 @@
     `doc_name`,`timeslot_id`,`symptoms`) 
     VALUES ('$first_name','$middle_name','$last_name','$gender','$blood_group','$date_of_ap','$doc_name','$timeslot_id','$symptoms');";
 
-
+    if($con->query($sql))
+    {
+        echo "Done";
+    }
+    else
+    {
+        echo "Error";
+    }
+    $con->close();
 
 //    // ADMIN SIDE
 //
