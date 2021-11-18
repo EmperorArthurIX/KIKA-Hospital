@@ -464,7 +464,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"] {
     appearance: none;
     -webkit-appearance: none;
-    color: #648880;
+    color: #64880;
     font-family: inherit;
     font-size: 18px;
     border:none;
