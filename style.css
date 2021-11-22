@@ -369,9 +369,9 @@ h5 {
     padding-right: 15px;
     padding-left: 15px;
 }
-.mb-lg-0{
+/* .mb-lg-0{
 
-}
+} */
 .col-sm-6{
   flex: 0 0 50%;
   max-width: 50%;
@@ -398,9 +398,9 @@ h5 {
 }
 /*appointment form */
 .appointment{
-  background-color: #FFF;
+
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #fff;
   padding: 20px;
 }
 .col-label{
@@ -464,7 +464,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"] {
     appearance: none;
     -webkit-appearance: none;
-    color: #64880;
+    color: #648880;
     font-family: inherit;
     font-size: 18px;
     border:none;
@@ -483,7 +483,7 @@ input[type="date"], focus {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
-input[type=submit] {
+.btn-100 {
   background-color: #648880;
   color: white;
   padding: 24px 50px;
@@ -957,3 +957,8 @@ textarea::-webkit-input-placeholder { color: #999999;}
 textarea:-moz-placeholder { color: #999999;}
 textarea::-moz-placeholder { color: #999999;}
 textarea:-ms-input-placeholder { color: #999999;}
+
+
+.tableback{
+  background-color: #fff;
+}

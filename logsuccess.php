@@ -57,81 +57,89 @@
 
       </div>
     </section>
-  <section>
-    <div class="log">
-      <div class="limiter">
-        <div class="container-login100">
-          <div class="wrap-login100">
-            <form action="logsuccess.php" method="post"class="login100-form validate-form">
-              <span class="login100-form-title p-b-43">
-                Login to continue
-              </span>
+    <section style="background:white">
+      <?php
+        $server = "localhost:3307";
+        $port = 3307;
+        $username = "root";
+        $password = "";
+        $dbname = "kikahospital";
+        $socket ="C:/xampp/mysql/mysql.sock";
 
 
-              <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                <input class="input100" type="text" name="email">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Email</span>
-              </div>
+        $con = mysqli_connect($server,$username,$password,$dbname,$port,$socket);
 
+        if(!$con){
+          die("connection failed due to ".mysqli_connect_error());
+        }
+        //login
+        $email=$_POST['email'] ?? "";
+        $password=$_POST['pass'] ?? "";
+        $sql = "SELECT doctors.id , doctors.name , doctor_login.emailid  , doctor_login.pass\n"
 
-              <div class="wrap-input100 validate-input" data-validate="Password is required">
-                <input class="input100" type="password" name="pass">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Password</span>
-              </div>
+          . "FROM doctors JOIN doctor_login on doctors.id=doctor_login.docid;";
 
-              <div class="flex-sb-m w-full p-t-3 p-b-32">
-                <div class="contact100-form-checkbox">
-                  <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                  <label class="label-checkbox100" for="ckb1">
-                    Remember me
-                  </label>
-                </div>
+        $docrec = mysqli_query($con,$sql);
 
-                <div>
-                  <a href="./adminlogin.html" class="txt1">
-                    Admin Login...
-                  </a>
-                </div>
-              </div>
+        while($data = mysqli_fetch_array($docrec))
+        {
+           if($email==$data['emailid'] && $password==$data['pass'])
+           {
+             $doc_match_name = $data['name'];
+            
+             $query_join ="SELECT first_name, middle_name, last_name , gender, blood_group,date_of_ap,timeslot_id,symptoms FROM appointments WHERE doc_name ='".$doc_match_name."';";
 
+             $result = mysqli_query($con,$query_join);
+            if($con->query($query_join))
+             {
+                 echo "Done";
+             }
+             else
+             {
+                 echo "Error";
+             }
 
-              <div class="container-login100-form-btn">
-                <button class="login100-form-btn ">
-                  Login
-                </button>
-              </div>
-            </form>
+           }
 
-            <div class="login100-more" style="background-image: url('images/back2.jpg');">
-            </div>
-          </div>
-        </div>
-      </div>
+        }
+         $con->close();
+      ?>
+      <table>
+        <thead>
+          <tr>
+            <th>FIRST NAME</th>
+            <th>MIDDLE NAME</th>
+            <th>LAST NAME</th>
+            <th>GENDER</th>
+            <th>BLOOD GROUP</th>
+            <th>DATE OF APPOINTMENT</th>
+            <th>TIME SLOT</th>
+            <th>SYMPTOMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+                while($row = mysqli_fetch_assoc($result))
+                {
 
+                  echo
+                    "<tr>
+                      <td>{$row['first_name']}</td>
+                      <td>{$row['middle_name']}</td>
+                      <td>{$row['last_name']}</td>
+                      <td>{$row['gender']}</td>
+                      <td>{$row['blood_group']}</td>
+                      <td>{$row['date_of_ap']}</td>
+                      <td>{$row['timeslot_id']}</td>
+                      <td>{$row['symptoms']}</td>
+                    </tr>";
+                }
+          ?>
+        </tbody>
 
+      </table>
 
-
-
-    <!--===============================================================================================-->
-      <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-      <script src="vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-      <script src="vendor/bootstrap/js/popper.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-      <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-      <script src="vendor/daterangepicker/moment.min.js"></script>
-      <script src="vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-      <script src="vendor/countdowntime/countdowntime.js"></script>
-    <!--===============================================================================================-->
-      <script src="js/main.js"></script>
-    </div>
-  </section>
+    </section>
     <!-- Footer -->
 
     <footer class="primary-footer container group">
