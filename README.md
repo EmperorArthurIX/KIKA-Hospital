@@ -21,7 +21,7 @@ For the tech enthusiasts _(and our evaluators)_, here is the tech stack that we 
 
 <img src="https://www.php.net/images/logos/new-php-logo.svg" height="25" width="25"/> PHP
 
-<img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" height="25" width="25"/> SQL
+<img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" height="25" width="25"/> JavaScript
 
 ## Team
 ---
