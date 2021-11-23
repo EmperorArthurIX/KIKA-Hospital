@@ -30,5 +30,5 @@ The four students who worked upon this project!
 | --- | --- |
 | Abraham Richard | [Abraham599](https://github.com/Abraham599) |
 | Ishaan Pandita | [EmperorArthurIX](https://github.com/EmperorArthurIX) |
-| Keyur Pawar | [Keyur Pawar]() |
+| Keyur Pawar | [Keyur Pawar](#) |
 | Krunal Bhere | [MORGUE28](https://github.com/MORGUE28) |
