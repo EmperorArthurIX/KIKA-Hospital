@@ -369,9 +369,9 @@ h5 {
     padding-right: 15px;
     padding-left: 15px;
 }
-/* .mb-lg-0{
+.mb-lg-0{
 
-} */
+}
 .col-sm-6{
   flex: 0 0 50%;
   max-width: 50%;
@@ -464,7 +464,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"] {
     appearance: none;
     -webkit-appearance: none;
-    color: #648880;
+    color: #64880;
     font-family: inherit;
     font-size: 18px;
     border:none;
@@ -957,8 +957,3 @@ textarea::-webkit-input-placeholder { color: #999999;}
 textarea:-moz-placeholder { color: #999999;}
 textarea::-moz-placeholder { color: #999999;}
 textarea:-ms-input-placeholder { color: #999999;}
-
-
-.tableback{
-  background-color: #fff;
-}

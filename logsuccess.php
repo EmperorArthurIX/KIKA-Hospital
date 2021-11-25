@@ -1,3 +1,48 @@
+<?php
+  $server = "localhost:3307";
+  $port = 3307;
+  $username = "root";
+  $password = "";
+  $dbname = "kikahospital";
+  $socket ="C:/xampp/mysql/mysql.sock";
+
+
+  $con = mysqli_connect($server,$username,$password,$dbname,$port,$socket);
+
+  if(!$con){
+    die("connection failed due to ".mysqli_connect_error());
+  }
+  //login
+  $email=$_POST['email'] ?? "";
+  $password=$_POST['pass'] ?? "";
+  $sql = "SELECT doctors.id , doctors.name , doctor_login.emailid  , doctor_login.pass\n"
+
+    . "FROM doctors JOIN doctor_login on doctors.id=doctor_login.docid;";
+
+  $docrec = mysqli_query($con,$sql);
+
+  while($data = mysqli_fetch_array($docrec))
+  {
+     if($email==$data['emailid'] && $password==$data['pass'])
+     {
+       $doc_match_name = $data['name'];
+
+       $query_join ="SELECT first_name, middle_name, last_name , gender, blood_group,date_of_ap,timeslot_id,symptoms FROM appointments WHERE doc_name ='".$doc_match_name."';";
+
+       $result = mysqli_query($con,$query_join);
+      /*if($con->query($query_join))
+       {
+           echo "Done";
+       }
+       else
+       {
+           echo "Error";
+       }*/
+
+     }
+
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,25 +51,10 @@
       KIKA HOSPITAL
     </title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="util.css">
+    <link rel="stylesheet" href="tablestyle.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <!--===============================================================================================-->
-    	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
 
   </head>
   <body>
@@ -33,11 +63,11 @@
     <header class="primary-header container group">
 
       <h1 class="logo">
-        <a href="index.html">KIKA<br>HOSPITAL</a>
+        <a href="main.html">KIKA<br>HOSPITAL</a>
       </h1>
       <nav class="nav primary-nav">
         <ul>
-          <li><a href="index.html">HOME</a></li><!--
+          <li><a href="main.html">HOME</a></li><!--
           --><li><a href="doctors.html">DOCTORS</a></li><!--
           --><li><a href="appointment.php">APPOINTMENT</a></li><!--
           --><li><a href="contact.html">LOCATION & CONTACT</a></li><!--
@@ -51,60 +81,15 @@
     <section class="row-alt">
       <div class="lead container">
 
-        <h1>Our Commitment to Safe Care</h1>
-
-        <p>We're here when you need us. For everyday care or life-changing care,<br> you can count on us to keep you and your loved ones safe and healthy.</p>
-
+        <p>Your Appointments </p>
+        <?php
+              echo "<h1>".$doc_match_name."</h1";
+        ?>
       </div>
     </section>
-    <section style="background:white">
-      <?php
-        $server = "localhost:3307";
-        $port = 3307;
-        $username = "root";
-        $password = "";
-        $dbname = "kikahospital";
-        $socket ="C:/xampp/mysql/mysql.sock";
+    <section class="tablesection">
 
-
-        $con = mysqli_connect($server,$username,$password,$dbname,$port,$socket);
-
-        if(!$con){
-          die("connection failed due to ".mysqli_connect_error());
-        }
-        //login
-        $email=$_POST['email'] ?? "";
-        $password=$_POST['pass'] ?? "";
-        $sql = "SELECT doctors.id , doctors.name , doctor_login.emailid  , doctor_login.pass\n"
-
-          . "FROM doctors JOIN doctor_login on doctors.id=doctor_login.docid;";
-
-        $docrec = mysqli_query($con,$sql);
-
-        while($data = mysqli_fetch_array($docrec))
-        {
-           if($email==$data['emailid'] && $password==$data['pass'])
-           {
-             $doc_match_name = $data['name'];
-            
-             $query_join ="SELECT first_name, middle_name, last_name , gender, blood_group,date_of_ap,timeslot_id,symptoms FROM appointments WHERE doc_name ='".$doc_match_name."';";
-
-             $result = mysqli_query($con,$query_join);
-            if($con->query($query_join))
-             {
-                 echo "Done";
-             }
-             else
-             {
-                 echo "Error";
-             }
-
-           }
-
-        }
-         $con->close();
-      ?>
-      <table>
+      <table class="tablemain">
         <thead>
           <tr>
             <th>FIRST NAME</th>
@@ -144,11 +129,11 @@
 
     <footer class="primary-footer container group">
 
-      <small>&copy; Styles Conference</small>
+      <small>&copy; KIKAHOSPITAL</small>
 
       <nav class="foot-nav primary-nav">
         <ul>
-          <li><a href="index.html">HOME</a></li><!--
+          <li><a href="main.html">HOME</a></li><!--
           --><li><a href="doctors.html">DOCTORS</a></li><!--
           --><li><a href="appointment.php">APPOINTMENT</a></li><!--
           --><li><a href="contact.html">LOCATION & CONTACT</a></li><!--

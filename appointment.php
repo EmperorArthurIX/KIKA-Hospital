@@ -16,11 +16,11 @@
     <header class="primary-header container group">
 
       <h1 class="logo">
-        <a href="index.html">KIKA<br>HOSPITAL</a>
+        <a href="main.html">KIKA<br>HOSPITAL</a>
       </h1>
       <nav class="nav primary-nav">
         <ul>
-          <li><a href="index.html">HOME</a></li><!--
+          <li><a href="main.html">HOME</a></li><!--
           --><li><a href="doctors.html">DOCTORS</a></li><!--
           --><li><a href="appointment.php">APPOINTMENT</a></li><!--
           --><li><a href="contact.html">LOCATION & CONTACT</a></li><!--
@@ -161,11 +161,11 @@
 
     <footer class="primary-footer container group">
 
-      <small>&copy; Styles Conference</small>
+      <small>&copy; KIKA HOSPITAL</small>
 
       <nav class="foot-nav primary-nav">
         <ul>
-          <li><a href="index.html">HOME</a></li><!--
+          <li><a href="main.html">HOME</a></li><!--
           --><li><a href="doctors.html">DOCTORS</a></li><!--
           --><li><a href="appointment.php">APPOINTMENT</a></li><!--
           --><li><a href="contact.html">LOCATION & CONTACT</a></li><!--
