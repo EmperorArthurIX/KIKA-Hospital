@@ -19,6 +19,10 @@ For the tech enthusiasts _(and our evaluators)_, here is the tech stack that we 
 
 <img src="https://www.freeiconspng.com/thumbs/sql-server-icon-png/sql-server-icon-png-29.png" height="25" width="25"/> SQL
 
+<img src="https://www.php.net/images/logos/new-php-logo.svg" height="25" width="25"/> PHP
+
+<img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png" height="25" width="25"/> JavaScript
+
 ## Team
 ---
 The four students who worked upon this project!
@@ -26,5 +30,5 @@ The four students who worked upon this project!
 | --- | --- |
 | Abraham Richard | [Abraham599](https://github.com/Abraham599) |
 | Ishaan Pandita | [EmperorArthurIX](https://github.com/EmperorArthurIX) |
-| Keyur Pawar | [Keyur Pawar]() |
+| Keyur Pawar | [keyurp9](https://github.com/keyurp9) |
 | Krunal Bhere | [MORGUE28](https://github.com/MORGUE28) |
